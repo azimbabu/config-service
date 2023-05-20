@@ -1,0 +1,21 @@
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/azimbabu/config-repository
+          default-label: master
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+          search-paths: catalog-service
+    name: config-service
+server:
+  port: 8888
+  tomcat:
+    connection-timeout: 2s
+    keep-alive-timeout: 15s
+    threads:
+      max: 50
+      min-spare: 5
