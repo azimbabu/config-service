@@ -10,6 +10,9 @@ spring:
           clone-on-start: true
           force-pull: true
           search-paths: catalog-service
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
+  application:
     name: config-service
 server:
   port: 8888
@@ -19,3 +22,4 @@ server:
     threads:
       max: 50
       min-spare: 5
+  shutdown: graceful
